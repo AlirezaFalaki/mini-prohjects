@@ -49,7 +49,8 @@ def help(snum,score):
         print('--------------------------------------------')
     return score
 
-
+# the main function to handel project
+# in this at first you have 100 points . if you use help the points will be decrease . and if your points are 0 you lose
 def menu():
     print('--------------------------------------------')
     print("Wellcome to the guess number game !!!")
