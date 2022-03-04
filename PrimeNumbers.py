@@ -1,10 +1,10 @@
 # this program show you prime numbers between two number without considering these two numbers
+
 n1=int(input())
 n2=int(input())
 
 list=[]
 num=0
-string=''
 
 for i in range(n1+1,n2,1):
     for j in range(2,int(i/2)+1):
