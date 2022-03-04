@@ -1,3 +1,4 @@
+# this program show you prime numbers between two number without considering these two numbers
 n1=int(input())
 n2=int(input())
 
