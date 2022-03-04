@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 void menu(void);
-struct product
+struct product     //a struct for defintion products
 {
     //char date[8];
     char name [30];
@@ -19,7 +19,7 @@ struct product
         cout<<amount<<endl;
     }
 };
-struct Sellproduct
+struct Sellproduct    // a struct for defintion and save Sells
 {
     char name[30];
     int date;
@@ -34,11 +34,11 @@ struct Sellproduct
     }
 };
 
-product p[50];
+product p[50];              //global  Arrays
 Sellproduct sp [100];
-int indexsp=0;
+int indexsp=0;  
 
-void SetProduct(void)
+void SetProduct(void)          //function for set products and save in binary file
 {
     cout<<"Please enter number of products to Add : "<<endl;
     int num;
@@ -65,7 +65,7 @@ void SetProduct(void)
     listproduct.close();
     cout<<"Your Product were successfully added ..."<<endl;
 }
-void update(void)
+void update(void)     //function for update products after Sells
 {
     int num;
     fstream listproduct("ListProduct.bin",ios::out | ios::binary | ios::in);
@@ -79,7 +79,7 @@ void update(void)
     }
     listproduct.close();
 }
-void ShowProduct(void)
+void ShowProduct(void)   //function for show products and read from binary file
 {
     cout<<"-----------------------------"<<endl<<endl;
     cout<<"code-----Name----Cost----Amount"<<endl<<endl;
@@ -100,7 +100,7 @@ void ShowProduct(void)
     }
     cout<<endl;
 }
-void Sell (void)
+void Sell (void)  //function for sell and save it to binary file
 {
 
     string name;
@@ -140,7 +140,7 @@ void Sell (void)
     if (out == 2){menu();}
 
 }
-void SellBaseDate(void)
+void SellBaseDate(void) // function for shoeing Sells between two input dates 
 {
     int date1,date2;
     cout<<"-----------------------------------"<<endl<<endl;
@@ -160,14 +160,8 @@ void SellBaseDate(void)
             cout<<sp[i].amount<<endl;
         }
     }
-
-
-
-
 }
-
-
-int main()
+int main()  //main function
 {
 
     //SetProduct();
@@ -177,7 +171,7 @@ int main()
     //int adad []={1,2,3,4,5,6};
     //cout<<p[0].name<<endl;
 }
-void menu(void)
+void menu(void)  //menu function
 {
 
     cout<<"-----------------------------------"<<endl;
@@ -205,7 +199,5 @@ void menu(void)
         case 4:
             update();
             break;
-
     }
-
 }
